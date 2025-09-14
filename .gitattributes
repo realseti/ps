@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+# Web/text files
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.svg  text eol=lf
+*.md   text eol=lf
+.htaccess text eol=lf
+
+# Binary images (never convert)
+*.png  -text
+*.jpg  -text
+*.jpeg -text
+*.gif  -text
+*.webp -text
