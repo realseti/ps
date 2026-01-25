@@ -20,6 +20,180 @@
 
 	<link rel="stylesheet" href="css/main.min.css">
 
+	<!-- Override any smooth scrolling - restore native scroll behavior -->
+	<style>
+		html, body {
+			scroll-behavior: auto !important;
+		}
+		html.lenis, html.lenis body {
+			height: auto;
+			overflow: auto;
+		}
+		.lenis.lenis-smooth {
+			scroll-behavior: auto !important;
+		}
+	</style>
+
+	<!-- Custom footer layout and smooth scroll overrides -->
+
+
+
+
+
+
+
+<style>
+/* --- SUBNAV: keep single row until 500px --- */
+.subnav ul{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.subnav ul li{flex:0 0 auto;}
+.subnav a.btn.sub{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;}
+@media (max-width:500px){
+  .subnav ul{flex-wrap:wrap;gap:12px;}
+  .subnav ul li{flex:1 1 100%;text-align:center;}
+  .subnav a.btn.sub{width:100%;padding:10px 14px;box-sizing:border-box;}
+}
+
+/* --- FOOTER: use CSS Grid for two equal columns; collapse only under 750px --- */
+
+/* global footer spacing */
+footer {
+  padding: 4rem 0; /* always 4rem top & bottom */
+  box-sizing: border-box;
+}
+
+/* Ensure footer-section is normal block so logo stays below the action row */
+footer .footer__wrapper .footer-section{
+  display:block !important;
+  width:100% !important;
+  box-sizing:border-box;
+}
+
+/* Action row: grid with two equal columns */
+footer .footer__wrapper .footer-section > .footer-action{
+  display:grid !important;
+  grid-template-columns: 1fr 1fr;
+  align-items:start;
+  gap:24px;
+  width:100% !important;
+  box-sizing:border-box;
+  clear:both !important;
+}
+
+/* Left column (subscribe) — occupies first grid column */
+footer .footer-action .subscribe-form{
+  grid-column:1;
+  justify-self:start;
+  box-sizing:border-box;
+  padding-right:16px;
+  text-align:left;
+  margin:0;
+}
+
+/* Right column (telegram) — occupies second grid column, shifted right and with top padding */
+footer .footer-action .footer-telegram{
+  grid-column:2;
+  justify-self:end;       /* push content to the right of its grid cell */
+  box-sizing:border-box;
+  padding-left:16px;
+  padding-top:80px;       /* requested 80px top padding */
+  text-align:right;
+  display:block;          /* keep simple layout (no flex on container) */
+}
+footer .footer-action .footer-telegram a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+}
+
+/* Logo block: always below the .footer-action and full-width */
+footer .footer__wrapper .footer-section > .footer-logo-centered{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  padding:64px 0 !important; /* large vertical spacing */
+  margin-top:24px !important;
+  clear:both !important;     /* force below row even if other styles float */
+  float:none !important;
+  position:relative !important;
+}
+
+/* Logo image sizing */
+footer .footer__wrapper .footer-section > .footer-logo-centered img{
+  max-width:320px;
+  height:auto;
+  display:inline-block;
+}
+
+  /* wrapper inside telegram to allow right-alignment on wide screens and centered when stacked */
+  .footer-telegram .footer-telegram-wrap{
+    display:flex;
+    width:100%;
+    justify-content:flex-end; /* keep content to the right on wide screens */
+    align-items:center;
+  }
+
+/* COLLAPSE behavior: only below 750px (stack, center, add spacing) */
+@media (max-width:750px){
+  footer .footer__wrapper .footer-section > .footer-action{
+    grid-template-columns: 1fr; /* stack */
+    justify-items:center;
+    gap:20px;
+    align-items:center;
+  }
+
+  footer .footer-action .subscribe-form,
+  footer .footer-action .footer-telegram{
+    grid-column:auto;
+    justify-self:center;
+    box-sizing:border-box;
+    padding:0 !important;
+    text-align:center !important;
+    width:100%; /* take full width when stacked */
+  }
+
+  /* extra breathing room between stacked blocks */
+  footer .footer-action .footer-telegram{ margin-top:18px !important; padding-top:0 !important; }
+
+  /* increase top padding of logo block when collapsed */
+  footer .footer__wrapper .footer-section > .footer-logo-centered{
+    padding-top:48px !important;
+    padding-bottom:32px !important;
+    margin-top:12px !important;
+  }
+
+    .footer-telegram .footer-telegram-wrap{
+      justify-content:center;
+      padding-top:0;
+    }
+    footer .footer-action .footer-telegram{
+      padding-top:0 !important; /* ensure the 80px is removed when stacked */
+    }
+
+}
+
+/* High-specificity safety rules to prevent other stylesheet rules from reordering/floating */
+footer .footer__wrapper .footer-section > .footer-action{order:0 !important;}
+footer .footer__wrapper .footer-section > .footer-logo-centered{order:1 !important; clear:both !important;}
+
+/* small tweaks for very small screens */
+@media (max-width:480px){
+  footer .footer__wrapper .footer-section > .footer-logo-centered{ padding:24px 0 !important; }
+  footer .footer-action{ gap:12px !important; }
+}
+</style>
+
+
 </head>
 
 <body>
@@ -35,19 +209,10 @@
 				</ul> -->
 				<ul class="social">
 					<li>
-						<a href="#" target="_blank">
+						<a href="https://t.me/puresummit" target="_blank" title="Telegram">
 							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M21.3368 9.33404C21.3368 8.59767 21.9338 8.00071 22.6702 8.00071C23.4065 8.00071 24.0035 8.59767 24.0035 9.33404C24.0035 10.0704 23.4065 10.6674 22.6702 10.6674C21.9338 10.6674 21.3368 10.0704 21.3368 9.33404Z"
-									fill="#F3F5F5" />
-								<path fill-rule="evenodd" clip-rule="evenodd"
-									d="M16.0035 9.66738C12.5057 9.66738 9.67017 12.5029 9.67017 16.0007C9.67017 19.4985 12.5057 22.334 16.0035 22.334C19.5013 22.334 22.3368 19.4985 22.3368 16.0007C22.3368 12.5029 19.5013 9.66738 16.0035 9.66738ZM11.6702 16.0007C11.6702 13.6075 13.6103 11.6674 16.0035 11.6674C18.3967 11.6674 20.3368 13.6075 20.3368 16.0007C20.3368 18.3939 18.3967 20.334 16.0035 20.334C13.6103 20.334 11.6702 18.3939 11.6702 16.0007Z"
-									fill="#F3F5F5" />
-								<path fill-rule="evenodd" clip-rule="evenodd"
-									d="M23.0145 3.77807C18.3924 3.26148 13.6146 3.26148 8.99253 3.77807C6.30978 4.0779 4.144 6.19125 3.8286 8.88795C3.27588 13.6137 3.27588 18.3877 3.8286 23.1135C4.144 25.8102 6.30978 27.9235 8.99253 28.2234C13.6146 28.7399 18.3924 28.7399 23.0145 28.2234C25.6972 27.9235 27.863 25.8102 28.1784 23.1135C28.7311 18.3877 28.7311 13.6137 28.1784 8.88795C27.863 6.19125 25.6972 4.0779 23.0145 3.77807ZM9.21467 5.76569C13.6891 5.2656 18.3179 5.2656 22.7924 5.76569C24.5658 5.9639 25.9865 7.36339 26.192 9.12029C26.7266 13.6917 26.7266 18.3098 26.192 22.8811C25.9865 24.638 24.5658 26.0375 22.7924 26.2357C18.3179 26.7358 13.6891 26.7358 9.21467 26.2357C7.4412 26.0375 6.02055 24.638 5.81506 22.8811C5.2804 18.3098 5.2804 13.6917 5.81506 9.12029C6.02055 7.36339 7.4412 5.9639 9.21467 5.76569Z"
-									fill="#F3F5F5" />
+								<path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm7.44 10.96l-2.63 12.4c-.2.88-.72 1.1-1.46.68l-4.04-2.98-1.95 1.88c-.22.22-.4.4-.82.4l.29-4.1 7.48-6.76c.32-.29-.07-.45-.5-.16l-9.24 5.82-3.98-1.24c-.87-.27-.88-.87.18-1.29l15.56-6c.72-.26 1.35.18 1.11 1.35z" fill="#F3F5F5"/>
 							</svg>
-
 						</a>
 					</li>
 				</ul>
@@ -79,10 +244,9 @@
 
 	<div class="subnav container">
 		<ul>
-			<li><a href="" class="btn sub">Introduction to Altai Region</a></li>
-			<li><a href="" class="btn sub">Connection to Spiritual Energy</a></li>
-			<li><a href="" class="btn sub">Why Choose Altai for Your Adventure</a></li>
-			<li><a href="" class="btn sub">Our Tour Packages Showcase </a></li>
+			<li><a href="#program" class="btn sub">Itinerary</a></li>
+			<li><a href="#guide" class="btn sub">Guides</a></li>
+			<li><a href="#info" class="btn sub">Price</a></li>
 		</ul>
 	</div>
 
@@ -191,7 +355,7 @@
 		</div>
 	</section>
 
-	<section class="program">
+	<section class="program" id="program">
 		<div class="container">
 			<div class="program__wrapper">
 
@@ -446,7 +610,7 @@
 		</div>
 	</section>
 
-	<section class="guide">
+	<section class="guide" id="guide">
 		<div class="container guide-adapt">
 			<div class="guide__wrapper">
 				<h3>Welcome our tour guide</h3>
@@ -527,12 +691,12 @@
 		</div>
 	</section>
 
-	<section class="info">
+	<section class="info" id="info">
 		<div class="container">
 			<div class="info__wrapper">
 				<div class="accordion">
 					<ul>
-						<li class="">
+						<li class="active">
 							<a class="accordion-button">
 								<p class="accordion-title">Price Information</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
@@ -540,13 +704,12 @@
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
 								</svg>
 							</a>
-							<div class="content first-section" style="display: none;">
+							<div class="content first-section" style="display: block;">
+								<div class="tour-price-header" style="width: 100%; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+									<h3 style="font-size: 28px; margin-bottom: 10px;">Tour Price: $2,800</h3>
+									<p style="font-size: 16px; color: #666;">August 6–20, 2026 • 16 Days</p>
+								</div>
 								<div class="first-section__header">
-									<div style="width: 100%; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
-										<h3 style="font-size: 28px; margin-bottom: 10px;">Tour Price: $2,800</h3>
-										<p style="font-size: 16px; color: #666;">August 6–20, 2026 • 16 Days</p>
-									</div>
-
 									<div>
 										<p>INCLUDED:</p>
 										<ul>
@@ -618,7 +781,7 @@
 							</div>
 						</li>
 
-						<li class="">
+						<li class="active">
 							<a class="accordion-button">
 								<p class="accordion-title">Visa and Passport Information</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
@@ -626,7 +789,7 @@
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
 								</svg>
 							</a>
-							<div class="content second-section" style="display: none;">
+							<div class="content second-section" style="display: block;">
 								<div>
 									<h5>VISA NEPAL</h5>
 									<p>Is best applied for upon arrival in Nepal. You will need a passport photo. For your first entry in
@@ -713,31 +876,6 @@
 		</div>
 	</section>
 
-	<section class="follow">
-		<div class="follow__header container">
-			<div>
-				<h3>Folllow us in instagram</h3>
-				<p>Hear Stories of Spiritual Awakening in Altai</p>
-			</div>
-			<a href="#" class="btn border">Instagram</a>
-		</div>
-		<div class="follow__wrapper">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-			<img src="https://source.unsplash.com/random/600x600" alt="">
-
-		</div>
-	</section>
-
 </main>
 
 
@@ -745,77 +883,37 @@
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer-section">
-        <a href="#">
-          <img src="images/dist/footer-logo.svg" alt="Logotype">
-        </a>
-
         <div class="footer-action">
-          <ul>
-            <li><a href="#">Expeditions</a></li>
-            <li><a href="#">Our story</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-
           <div class="subscribe-form">
-            <p>subscribe to the news to stay updated on new interesting stories</p>
-            <div class="subscribe-wrap">
-              <input type="text" placeholder="Your email">
-              <button><span>Go!</span> </button>
+						<p>subscribe to the news to stay updated on new interesting stories</p>
+						<div class="subscribe-wrap">
+							<input type="text" placeholder="Your email">
+							<button><span>Go!</span> </button>
+						</div>
+					</div>
+
+
+          <div class="footer-telegram">
+            <div class="footer-telegram-wrap">
+              <a href="https://t.me/puresummit" target="_blank" style="display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm7.44 10.96l-2.63 12.4c-.2.88-.72 1.1-1.46.68l-4.04-2.98-1.95 1.88c-.22.22-.4.4-.82.4l.29-4.1 7.48-6.76c.32-.29-.07-.45-.5-.16l-9.24 5.82-3.98-1.24c-.87-.27-.88-.87.18-1.29l15.56-6c.72-.26 1.35.18 1.11 1.35z" fill="#F3F5F5"></path>
+                </svg>
+                <span style="color:#fff;">Follow us in Telegram</span>
+              </a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <ul class="footer-social">
-        <li>
-          <a href="">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21.3368 9.33404C21.3368 8.59767 21.9338 8.00071 22.6702 8.00071C23.4065 8.00071 24.0035 8.59767 24.0035 9.33404C24.0035 10.0704 23.4065 10.6674 22.6702 10.6674C21.9338 10.6674 21.3368 10.0704 21.3368 9.33404Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M16.0035 9.66738C12.5057 9.66738 9.67017 12.5029 9.67017 16.0007C9.67017 19.4985 12.5057 22.334 16.0035 22.334C19.5013 22.334 22.3368 19.4985 22.3368 16.0007C22.3368 12.5029 19.5013 9.66738 16.0035 9.66738ZM11.6702 16.0007C11.6702 13.6075 13.6103 11.6674 16.0035 11.6674C18.3967 11.6674 20.3368 13.6075 20.3368 16.0007C20.3368 18.3939 18.3967 20.334 16.0035 20.334C13.6103 20.334 11.6702 18.3939 11.6702 16.0007Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M23.0145 3.77807C18.3924 3.26148 13.6146 3.26148 8.99253 3.77807C6.30978 4.0779 4.144 6.19125 3.8286 8.88795C3.27588 13.6137 3.27588 18.3877 3.8286 23.1135C4.144 25.8102 6.30978 27.9235 8.99253 28.2234C13.6146 28.7399 18.3924 28.7399 23.0145 28.2234C25.6972 27.9235 27.863 25.8102 28.1784 23.1135C28.7311 18.3877 28.7311 13.6137 28.1784 8.88795C27.863 6.19125 25.6972 4.0779 23.0145 3.77807ZM9.21467 5.76569C13.6891 5.2656 18.3179 5.2656 22.7924 5.76569C24.5658 5.9639 25.9865 7.36339 26.192 9.12029C26.7266 13.6917 26.7266 18.3098 26.192 22.8811C25.9865 24.638 24.5658 26.0375 22.7924 26.2357C18.3179 26.7358 13.6891 26.7358 9.21467 26.2357C7.4412 26.0375 6.02055 24.638 5.81506 22.8811C5.2804 18.3098 5.2804 13.6917 5.81506 9.12029C6.02055 7.36339 7.4412 5.9639 9.21467 5.76569Z"
-                fill="#F3F5F5" />
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21.3368 9.33404C21.3368 8.59767 21.9338 8.00071 22.6702 8.00071C23.4065 8.00071 24.0035 8.59767 24.0035 9.33404C24.0035 10.0704 23.4065 10.6674 22.6702 10.6674C21.9338 10.6674 21.3368 10.0704 21.3368 9.33404Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M16.0035 9.66738C12.5057 9.66738 9.67017 12.5029 9.67017 16.0007C9.67017 19.4985 12.5057 22.334 16.0035 22.334C19.5013 22.334 22.3368 19.4985 22.3368 16.0007C22.3368 12.5029 19.5013 9.66738 16.0035 9.66738ZM11.6702 16.0007C11.6702 13.6075 13.6103 11.6674 16.0035 11.6674C18.3967 11.6674 20.3368 13.6075 20.3368 16.0007C20.3368 18.3939 18.3967 20.334 16.0035 20.334C13.6103 20.334 11.6702 18.3939 11.6702 16.0007Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M23.0145 3.77807C18.3924 3.26148 13.6146 3.26148 8.99253 3.77807C6.30978 4.0779 4.144 6.19125 3.8286 8.88795C3.27588 13.6137 3.27588 18.3877 3.8286 23.1135C4.144 25.8102 6.30978 27.9235 8.99253 28.2234C13.6146 28.7399 18.3924 28.7399 23.0145 28.2234C25.6972 27.9235 27.863 25.8102 28.1784 23.1135C28.7311 18.3877 28.7311 13.6137 28.1784 8.88795C27.863 6.19125 25.6972 4.0779 23.0145 3.77807ZM9.21467 5.76569C13.6891 5.2656 18.3179 5.2656 22.7924 5.76569C24.5658 5.9639 25.9865 7.36339 26.192 9.12029C26.7266 13.6917 26.7266 18.3098 26.192 22.8811C25.9865 24.638 24.5658 26.0375 22.7924 26.2357C18.3179 26.7358 13.6891 26.7358 9.21467 26.2357C7.4412 26.0375 6.02055 24.638 5.81506 22.8811C5.2804 18.3098 5.2804 13.6917 5.81506 9.12029C6.02055 7.36339 7.4412 5.9639 9.21467 5.76569Z"
-                fill="#F3F5F5" />
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21.3368 9.33404C21.3368 8.59767 21.9338 8.00071 22.6702 8.00071C23.4065 8.00071 24.0035 8.59767 24.0035 9.33404C24.0035 10.0704 23.4065 10.6674 22.6702 10.6674C21.9338 10.6674 21.3368 10.0704 21.3368 9.33404Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M16.0035 9.66738C12.5057 9.66738 9.67017 12.5029 9.67017 16.0007C9.67017 19.4985 12.5057 22.334 16.0035 22.334C19.5013 22.334 22.3368 19.4985 22.3368 16.0007C22.3368 12.5029 19.5013 9.66738 16.0035 9.66738ZM11.6702 16.0007C11.6702 13.6075 13.6103 11.6674 16.0035 11.6674C18.3967 11.6674 20.3368 13.6075 20.3368 16.0007C20.3368 18.3939 18.3967 20.334 16.0035 20.334C13.6103 20.334 11.6702 18.3939 11.6702 16.0007Z"
-                fill="#F3F5F5" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M23.0145 3.77807C18.3924 3.26148 13.6146 3.26148 8.99253 3.77807C6.30978 4.0779 4.144 6.19125 3.8286 8.88795C3.27588 13.6137 3.27588 18.3877 3.8286 23.1135C4.144 25.8102 6.30978 27.9235 8.99253 28.2234C13.6146 28.7399 18.3924 28.7399 23.0145 28.2234C25.6972 27.9235 27.863 25.8102 28.1784 23.1135C28.7311 18.3877 28.7311 13.6137 28.1784 8.88795C27.863 6.19125 25.6972 4.0779 23.0145 3.77807ZM9.21467 5.76569C13.6891 5.2656 18.3179 5.2656 22.7924 5.76569C24.5658 5.9639 25.9865 7.36339 26.192 9.12029C26.7266 13.6917 26.7266 18.3098 26.192 22.8811C25.9865 24.638 24.5658 26.0375 22.7924 26.2357C18.3179 26.7358 13.6891 26.7358 9.21467 26.2357C7.4412 26.0375 6.02055 24.638 5.81506 22.8811C5.2804 18.3098 5.2804 13.6917 5.81506 9.12029C6.02055 7.36339 7.4412 5.9639 9.21467 5.76569Z"
-                fill="#F3F5F5" />
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+        </div>
+
+				<div class="footer-logo-centered">
+					<a href="#">
+						<img src="images/dist/footer-logo.svg" alt="Logotype">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
   <div id="booking-form" class="mfp-hide white-popup-block booking-form">
     <h2>Your inner journey starts with us!</h2>
@@ -850,7 +948,15 @@
 
 
 
-<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+<!-- Lenis smooth scroll removed for native scrolling -->
+<script>
+// Mock Lenis to prevent errors if app.min.js tries to use it
+window.Lenis = function() {
+  this.raf = function() {};
+  this.on = function() {};
+  this.destroy = function() {};
+};
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
   integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -863,6 +969,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
   integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+// Smooth scrolling for subnav links using GSAP
+document.addEventListener('DOMContentLoaded', function(){
+	if(typeof gsap === 'undefined') return;
+	const links = document.querySelectorAll('.subnav a[href^="#"]');
+	const scrollEl = document.scrollingElement || document.documentElement;
+	links.forEach(link => {
+		link.addEventListener('click', function(e){
+			e.preventDefault();
+			const id = this.getAttribute('href').slice(1);
+			const target = document.getElementById(id);
+			if(!target) return;
+			const header = document.querySelector('header');
+			const headerOffset = header ? header.offsetHeight : 0;
+			const rect = target.getBoundingClientRect();
+			const targetY = rect.top + window.pageYOffset - headerOffset - 16;
+			gsap.to(scrollEl, {duration: 1.1, scrollTop: targetY, ease: 'power2.out', onComplete: function(){
+				try{ history.replaceState(null, '', '#'+id); }catch(e){}
+			}});
+		});
+	});
+});
+</script>
 
 <script src="js/app.min.js"></script>
 
