@@ -1,13 +1,16 @@
+
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 
 <head>
 
 	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
 	<title>
-		Тибет 2026: Путешествие к Сердцу Мира
+		Tibet 2026: Lhasa – Three Lakes – Kailash
 	</title>
-	<meta name="description" content="Экспедиция в Тибет: Кайлаш, Манасаровар, Лхаса. Духовная алхимия и кора.">
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,6 +20,7 @@
 
 	<link rel="stylesheet" href="css/main.min.css">
 
+	<!-- Override any smooth scrolling - restore native scroll behavior -->
 	<style>
 		html, body {
 			scroll-behavior: auto !important;
@@ -30,156 +34,164 @@
 		}
 	</style>
 
-	<style>
-	/* --- SUBNAV: keep single row until 500px --- */
-	.subnav ul{
-	  display:flex;
-	  gap:18px;
-	  justify-content:center;
-	  align-items:center;
-	  flex-wrap:nowrap;
-	  list-style:none;
-	  margin:0;
-	  padding:0;
-	}
-	.subnav ul li{flex:0 0 auto;}
-	.subnav a.btn.sub{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;}
-	@media (max-width:500px){
-	  .subnav ul{flex-wrap:wrap;gap:12px;}
-	  .subnav ul li{flex:1 1 100%;text-align:center;}
-	  .subnav a.btn.sub{width:100%;padding:10px 14px;box-sizing:border-box;}
-	}
+	<!-- Custom footer layout and smooth scroll overrides -->
 
-	/* --- FOOTER: use CSS Grid for two equal columns; collapse only under 750px --- */
 
-	/* global footer spacing */
-	footer {
-	  padding: 4rem 0; /* always 4rem top & bottom */
-	  box-sizing: border-box;
-	}
 
-	/* Ensure footer-section is normal block so logo stays below the action row */
-	footer .footer__wrapper .footer-section{
-	  display:block !important;
-	  width:100% !important;
-	  box-sizing:border-box;
-	}
 
-	/* Action row: grid with two equal columns */
-	footer .footer__wrapper .footer-section > .footer-action{
-	  display:grid !important;
-	  grid-template-columns: 1fr 1fr;
-	  align-items:start;
-	  gap:24px;
-	  width:100% !important;
-	  box-sizing:border-box;
-	  clear:both !important;
-	}
 
-	/* Left column (subscribe) — occupies first grid column */
-	footer .footer-action .subscribe-form{
-	  grid-column:1;
-	  justify-self:start;
-	  box-sizing:border-box;
-	  padding-right:16px;
-	  text-align:left;
-	  margin:0;
-	}
 
-	/* Right column (telegram) — occupies second grid column, shifted right and with top padding */
-	footer .footer-action .footer-telegram{
-	  grid-column:2;
-	  justify-self:end;       /* push content to the right of its grid cell */
-	  box-sizing:border-box;
-	  padding-left:16px;
-	  padding-top:80px;       /* requested 80px top padding */
-	  text-align:right;
-	  display:block;          /* keep simple layout (no flex on container) */
-	}
-	footer .footer-action .footer-telegram a{
-	  display:inline-flex;
-	  align-items:center;
-	  gap:10px;
-	  text-decoration:none;
-	  color:inherit;
-	}
 
-	/* Logo block: always below the .footer-action and full-width */
-	footer .footer__wrapper .footer-section > .footer-logo-centered{
-	  display:block !important;
-	  width:100% !important;
-	  text-align:center !important;
-	  padding:64px 0 !important; /* large vertical spacing */
-	  margin-top:24px !important;
-	  clear:both !important;     /* force below row even if other styles float */
-	  float:none !important;
-	  position:relative !important;
-	}
+<style>
+/* --- SUBNAV: keep single row until 500px --- */
+.subnav ul{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.subnav ul li{flex:0 0 auto;}
+.subnav a.btn.sub{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;}
+@media (max-width:500px){
+  .subnav ul{flex-wrap:wrap;gap:12px;}
+  .subnav ul li{flex:1 1 100%;text-align:center;}
+  .subnav a.btn.sub{width:100%;padding:10px 14px;box-sizing:border-box;}
+}
 
-	/* Logo image sizing */
-	footer .footer__wrapper .footer-section > .footer-logo-centered img{
-	  max-width:320px;
-	  height:auto;
-	  display:inline-block;
-	}
+/* --- FOOTER: use CSS Grid for two equal columns; collapse only under 750px --- */
 
-	  /* wrapper inside telegram to allow right-alignment on wide screens and centered when stacked */
-	  .footer-telegram .footer-telegram-wrap{
-	    display:flex;
-	    width:100%;
-	    justify-content:flex-end; /* keep content to the right on wide screens */
-	    align-items:center;
-	  }
+/* global footer spacing */
+footer {
+  padding: 4rem 0; /* always 4rem top & bottom */
+  box-sizing: border-box;
+}
 
-	/* COLLAPSE behavior: only below 750px (stack, center, add spacing) */
-	@media (max-width:750px){
-	  footer .footer__wrapper .footer-section > .footer-action{
-	    grid-template-columns: 1fr; /* stack */
-	    justify-items:center;
-	    gap:20px;
-	    align-items:center;
-	  }
+/* Ensure footer-section is normal block so logo stays below the action row */
+footer .footer__wrapper .footer-section{
+  display:block !important;
+  width:100% !important;
+  box-sizing:border-box;
+}
 
-	  footer .footer-action .subscribe-form,
-	  footer .footer-action .footer-telegram{
-	    grid-column:auto;
-	    justify-self:center;
-	    box-sizing:border-box;
-	    padding:0 !important;
-	    text-align:center !important;
-	    width:100%; /* take full width when stacked */
-	  }
+/* Action row: grid with two equal columns */
+footer .footer__wrapper .footer-section > .footer-action{
+  display:grid !important;
+  grid-template-columns: 1fr 1fr;
+  align-items:start;
+  gap:24px;
+  width:100% !important;
+  box-sizing:border-box;
+  clear:both !important;
+}
 
-	  /* extra breathing room between stacked blocks */
-	  footer .footer-action .footer-telegram{ margin-top:18px !important; padding-top:0 !important; }
+/* Left column (subscribe) — occupies first grid column */
+footer .footer-action .subscribe-form{
+  grid-column:1;
+  justify-self:start;
+  box-sizing:border-box;
+  padding-right:16px;
+  text-align:left;
+  margin:0;
+}
 
-	  /* increase top padding of logo block when collapsed */
-	  footer .footer__wrapper .footer-section > .footer-logo-centered{
-	    padding-top:48px !important;
-	    padding-bottom:32px !important;
-	    margin-top:12px !important;
-	  }
+/* Right column (telegram) — occupies second grid column, shifted right and with top padding */
+footer .footer-action .footer-telegram{
+  grid-column:2;
+  justify-self:end;       /* push content to the right of its grid cell */
+  box-sizing:border-box;
+  padding-left:16px;
+  padding-top:80px;       /* requested 80px top padding */
+  text-align:right;
+  display:block;          /* keep simple layout (no flex on container) */
+}
+footer .footer-action .footer-telegram a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+}
 
-	    .footer-telegram .footer-telegram-wrap{
-	      justify-content:center;
-	      padding-top:0;
-	    }
-	    footer .footer-action .footer-telegram{
-	      padding-top:0 !important; /* ensure the 80px is removed when stacked */
-	    }
+/* Logo block: always below the .footer-action and full-width */
+footer .footer__wrapper .footer-section > .footer-logo-centered{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  padding:64px 0 !important; /* large vertical spacing */
+  margin-top:24px !important;
+  clear:both !important;     /* force below row even if other styles float */
+  float:none !important;
+  position:relative !important;
+}
 
-	}
+/* Logo image sizing */
+footer .footer__wrapper .footer-section > .footer-logo-centered img{
+  max-width:320px;
+  height:auto;
+  display:inline-block;
+}
 
-	/* High-specificity safety rules to prevent other stylesheet rules from reordering/floating */
-	footer .footer__wrapper .footer-section > .footer-action{order:0 !important;}
-	footer .footer__wrapper .footer-section > .footer-logo-centered{order:1 !important; clear:both !important;}
+  /* wrapper inside telegram to allow right-alignment on wide screens and centered when stacked */
+  .footer-telegram .footer-telegram-wrap{
+    display:flex;
+    width:100%;
+    justify-content:flex-end; /* keep content to the right on wide screens */
+    align-items:center;
+  }
 
-	/* small tweaks for very small screens */
-	@media (max-width:480px){
-	  footer .footer__wrapper .footer-section > .footer-logo-centered{ padding:24px 0 !important; }
-	  footer .footer-action{ gap:12px !important; }
-	}
-	</style>
+/* COLLAPSE behavior: only below 750px (stack, center, add spacing) */
+@media (max-width:750px){
+  footer .footer__wrapper .footer-section > .footer-action{
+    grid-template-columns: 1fr; /* stack */
+    justify-items:center;
+    gap:20px;
+    align-items:center;
+  }
+
+  footer .footer-action .subscribe-form,
+  footer .footer-action .footer-telegram{
+    grid-column:auto;
+    justify-self:center;
+    box-sizing:border-box;
+    padding:0 !important;
+    text-align:center !important;
+    width:100%; /* take full width when stacked */
+  }
+
+  /* extra breathing room between stacked blocks */
+  footer .footer-action .footer-telegram{ margin-top:18px !important; padding-top:0 !important; }
+
+  /* increase top padding of logo block when collapsed */
+  footer .footer__wrapper .footer-section > .footer-logo-centered{
+    padding-top:48px !important;
+    padding-bottom:32px !important;
+    margin-top:12px !important;
+  }
+
+    .footer-telegram .footer-telegram-wrap{
+      justify-content:center;
+      padding-top:0;
+    }
+    footer .footer-action .footer-telegram{
+      padding-top:0 !important; /* ensure the 80px is removed when stacked */
+    }
+
+}
+
+/* High-specificity safety rules to prevent other stylesheet rules from reordering/floating */
+footer .footer__wrapper .footer-section > .footer-action{order:0 !important;}
+footer .footer__wrapper .footer-section > .footer-logo-centered{order:1 !important; clear:both !important;}
+
+/* small tweaks for very small screens */
+@media (max-width:480px){
+  footer .footer__wrapper .footer-section > .footer-logo-centered{ padding:24px 0 !important; }
+  footer .footer-action{ gap:12px !important; }
+}
+</style>
 
 
 </head>
@@ -190,6 +202,11 @@
 			<a href="index.html" class="logotype"><img src="images/dist/logotype.svg" alt="logotype"></a>
 
 			<div class="nav__menu">
+				<!-- <ul class="navigation" id="navigation">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">item-1</a></li>
+					<li><a href="#">item-2</a></li>
+				</ul> -->
 				<ul class="social">
 					<li>
 						<a href="https://t.me/puresummit" target="_blank" title="Telegram">
@@ -215,9 +232,9 @@
 	<section class="hero">
 		<div class="container">
 			<div class="hero__wrapper">
-				<h1>Путешествие к Сердцу Мира:<br>Там, где выбор становится судьбой</h1>
-				<p>6 – 20 августа 2026. Жизнь — это череда выборов. Кайлаш — место, где твое личное «да» вплетается в общий узор коллективной воли.</p>
-				<a href="#booking-form" class="btn accent book-btn">Сделать этот шаг</a>
+				<h1>Tibet 2026: Lhasa – Three Lakes – Kailash</h1>
+				<p>August 6–20, 2026 • Embark on a spiritual journey and meditate amidst the serene landscapes of Tibet</p>
+				<a href="#booking-form" class="btn accent book-btn">Book Your Retreat</a>
 			</div>
 		</div>
 		<video loop autoplay muted>
@@ -227,9 +244,9 @@
 
 	<div class="subnav container">
 		<ul>
-			<li><a href="#program" class="btn sub">Программа</a></li>
-			<li><a href="#guide" class="btn sub">Проводник</a></li>
-			<li><a href="#info" class="btn sub">Стоимость</a></li>
+			<li><a href="#program" class="btn sub">Itinerary</a></li>
+			<li><a href="#guide" class="btn sub">Guides</a></li>
+			<li><a href="#info" class="btn sub">Price</a></li>
 		</ul>
 	</div>
 
@@ -238,10 +255,11 @@
 			<div class="introduction__wrapper">
 				<div class="introduction__body">
 					<div class="introduction__txt">
-						<span>О Пути</span>
-						<h2>Синергия Пути: Вы идете не одни</h2>
-						<p>Каждое наше «да» и «нет» — это кирпичик в стене реальности. Но что, если соединить тихое личное устремление с мощным потоком тысяч таких же намерений?</p>
-						<p>Уникальность этого пути — в синергии. Вы — часть живой реки. Рядом монах, отмеряющий путь поклонами, и искатель с другого конца света. Ваше личное «хочу стать лучше» резонирует с их молитвой, перестает быть частным делом и обретает силу общего ритма.</p>
+						<span>Introduction to Tibet tour</span>
+						<h2>Unlock Your Inner Serenity Amidst Nature's Majesty</h2>
+						<p>Immerse yourself in the heart of Altai's natural wonder. Here, the mountains whisper ancient wisdom, and
+							the rivers carry the secrets of the universe. Our meditation retreats offer you the opportunity to connect
+							with the soul of Altai, to find inner peace, and to embark on a transformative odyssey like no other.</p>
 					</div>
 
 					<div class="introduction__img">
@@ -252,20 +270,20 @@
 				<div class="introduction__footer">
 					<ul>
 					<li>
-						<p class="num">15</p>
-						<p class="num-title">Дней</p>
+						<p class="num">16</p>
+						<p class="num-title">Days</p>
 					</li>
 						<li>
-							<p class="num">12</p>
-							<p class="num-title">Человек</p>
+							<p class="num">10</p>
+							<p class="num-title">People</p>
 						</li>
 						<li>
 							<p class="num">8</p>
-							<p class="num-title">Монастырей</p>
+							<p class="num-title">Monasteries</p>
 						</li>
 						<li>
-							<p class="num">5k</p>
-							<p class="num-title">Высота</p>
+							<p class="num">10</p>
+							<p class="num-title">People</p>
 						</li>
 					</ul>
 				</div>
@@ -280,8 +298,13 @@
 					<img class="grow" src="images/dist/kailas-kora.jpg" />
 				</div>
 				<div class="places__txt container">
-					<h3>Священный Кайлаш</h3>
-					<p>Хрустальная ступа, пронзающая небо. Идеальная мандала, отпечатанная в камне. Мы не покоряем его вершину — мы совершаем Кору. Здесь каждый шаг — это осознанный выбор: оставить прошлое и родиться заново.</p>
+					<h3>Kailas Kora</h3>
+					<p>Embark on the sacred pilgrimage of Kailash Kora, a trek around the sacred Mount Kailash. This revered
+						mountain is
+						considered the abode of Lord Shiva and a symbol of spiritual awakening. The trek offers breathtaking views,
+						challenging trails, and a profound spiritual experience. Join us as we navigate the Kora, where each step is
+						a
+						step closer to the divine.</p>
 
 				</div>
 			</div>
@@ -291,8 +314,13 @@
 					<img class="grow" src="images/dist/manasarovar-lake.jpg" />
 				</div>
 				<div class="places__txt container">
-					<h3>Озеро Манасаровар</h3>
-					<p>Манасаровар — Озеро Сознания. Погружение в его ледяные, живые воды — это ритуал перерождения, обнуляющий всё, что мешает двигаться дальше. Перед встречей с Кайласом мы смываем пыль кармы.</p>
+					<h3>Manasarovar Lake</h3>
+					<p>Nestled amidst the majestic Himalayas, Manasarovar Lake is a sacred jewel of Tibet. Revered for its
+						spiritual
+						significance, the crystal-clear waters mirror the towering peaks that surround it. Pilgrims believe that
+						circumambulating this sacred lake purifies the soul. Join us on a journey to Manasarovar, where tranquility
+						meets
+						divinity, and every step is a pilgrimage of the heart.</p>
 
 				</div>
 			</div>
@@ -302,8 +330,13 @@
 					<img class="grow" src="images/dist/sacred-temples.jpg" />
 				</div>
 				<div class="places__txt container">
-					<h3>Сердце Тибета</h3>
-					<p>Лхаса и Храм Джоканг. «Обитель Богов» и место силы Ян. Здесь, в храме Джоканг, хранится древняя статуя Будды Шакьямуни. Мы вольемся в поток паломников, чтобы сплести нить своего намерения с общим узором молитвы.</p>
+					<h3>Sacred Temples</h3>
+					<p>Embark on the sacred pilgrimage of Kailash Kora, a trek around the sacred Mount Kailash. This revered
+						mountain is
+						considered the abode of Lord Shiva and a symbol of spiritual awakening. The trek offers breathtaking views,
+						challenging trails, and a profound spiritual experience. Join us as we navigate the Kora, where each step is
+						a
+						step closer to the divine.</p>
 
 				</div>
 			</div>
@@ -313,9 +346,11 @@
 	<section class="cta">
 		<div class="container">
 			<div class="cta__wrapper">
-				<h3>Найдите свой внутренний покой</h3>
-				<p>Это не просто треккинг, это гигантский тренажер духа, где каждый шаг — осознанное решение стать чище и сильнее.</p>
-				<a href="#booking-form" class="btn accent book-btn">Присоединиться</a>
+				<h3>Find Your Inner Peace with Puresumit</h3>
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+					ea
+					commodi consequatur</p>
+				<a href="#booking-form" class="btn accent book-btn">Book Your Retreat</a>
 			</div>
 		</div>
 	</section>
@@ -325,147 +360,147 @@
 			<div class="program__wrapper">
 
 				<div class="tour__wrap">
-					<h2>Программа Тура</h2>
+					<h2>Itinerary</h2>
 					<ul class="tour__list">
 						<li>
 							<div class="list__item">
-								<span class="day">День 1</span>
-								<h4>Прибытие в Лхасу (3650 м). Первый вдох.</h4>
-								<p>Прибытие в «Обитель Богов». Мягкая акклиматизация и осознанное замедление. Вечерняя медитация-настройка.</p>
+								<span class="day">Day 1</span>
+								<h4>Arrival in Lhasa (3650 m)</h4>
+								<p>Transfer to hotel. Rest, acclimatization.</p>
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 2</span>
-								<h4>Лхаса. Центр Вселенной.</h4>
-								<p>Посещение храма Джоканг — энергетического сердца Тибета. Кора вместе с паломниками. Прогулка по улице Баркор.</p>
-
-							</div>
-						</li>
-
-						<li>
-							<div class="list__item">
-								<span class="day">День 3</span>
-								<h4>Самье — Архитектура души.</h4>
-								<p>Переезд в первый монастырь Тибета — Самье, построенный как земная проекция мандалы Вселенной. Посещение пещер Чим-Пук.</p>
+								<span class="day">Day 2</span>
+								<h4>Lhasa</h4>
+								<p>Jokhang Temple, Barkhor Street. Transfer to Samye.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 4</span>
-								<h4>Озеро Намцо — Небесное зеркало.</h4>
-								<p>Подъем на перевал Накчу-Ла (5190 м) к озеру Намцо (4718 м). Озеро, соединяющее небо и землю.</p>
+								<span class="day">Day 3</span>
+								<h4>Samye → Mindrolling → Lhasa</h4>
+								<p>Drive: 250 km. Monastery tour.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 5</span>
-								<h4>Лхаса — Шигадзе. Бирюза и Золото.</h4>
-								<p>Путь вдоль священного озера Ямдрок-Цо. Посещение ступы Кумбум в Гьянце. Ночлег в Шигадзе.</p>
+								<span class="day">Day 4</span>
+								<h4>Lhasa → Lake Namtso → Lhasa (day trip)</h4>
+								<p>Drive: 440 km. Altitude: Nakchu-La Pass (5190 m), Lake (4718 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 6</span>
-								<h4>Шигадзе — Сага. Зов высоты.</h4>
-								<p>Утреннее благословение в монастыре Ташилунпо. Дорога в Сагу (4400 м), где воздух становится прозрачным, как хрусталь.</p>
+								<span class="day">Day 5</span>
+								<h4>Lhasa → Lake Yamdrok-Tso → Gyantse → Shigatse</h4>
+								<p>Drive: 350 km. Altitude: Kamba-La Pass (4794 m). Tour of Pelkor Chode Monastery and Kumbum Stupa. Overnight in Shigatse (3900 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 7</span>
-								<h4>Сага — Тиртапури. Врата Шамбалы.</h4>
-								<p>Прибытие в Тиртапури. Горячие источники. Ритуальное омовение перед началом Коры — смываем прошлое.</p>
+								<span class="day">Day 6</span>
+								<h4>Shigatse → Saga</h4>
+								<p>Drive: 240 km. Morning tour of Tashilhunpo Monastery. Overnight in Saga (4400 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 8</span>
-								<h4>Начало Пути. Лицом к Лицу.</h4>
-								<p>Переход от Дарчена к монастырю Дерапак (5000 м). Впервые открывается Северная Лица Кайлаша. Ночь у подножия Бога.</p>
+								<span class="day">Day 7</span>
+								<h4>Saga → Tirthapuri</h4>
+								<p>Drive: 330 km. Visit to the sacred site of Tirthapuri, ritual bathing in hot springs. Overnight in Tirthapuri guesthouse (4600 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 9</span>
-								<h4>Тишина Северного Лица.</h4>
-								<p>День отдыха и глубоких практик в Дерапаке. Прикосновение к «Языку Кайлаша». Внутренний диалог с Горой.</p>
+								<span class="day">Day 8</span>
+								<h4>Tirthapuri → Darchen → Start of Kora → Dirapuk</h4>
+								<p>Short drive to Darchen. Trek: 18 km, 6–7 hours. Overnight in a guesthouse near Dirapuk Monastery (5000 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 10</span>
-								<h4>Перевал Дролма-Ла. Перерождение.</h4>
-								<p>Самый важный день. Подъем на перевал (5630 м). Оставляем символы старой жизни и рождаемся заново. Спуск к Зутулпук.</p>
+								<span class="day">Day 9</span>
+								<h4>Rest in Dirapuk</h4>
+								<p>Meditation at the North Face of Kailash.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 11</span>
-								<h4>Завершение круга.</h4>
-								<p>Выход к озеру Манасаровар. Кора завершена внешне, но внутренняя работа только начинается.</p>
+								<span class="day">Day 10</span>
+								<h4>Dirapuk → Dolma-La Pass → Zutulphuk</h4>
+								<p>Trek: 18 km, 7–9 hours. Pass altitude: 5630 m. Overnight in a guesthouse near Zutulphuk Monastery (4790 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 12</span>
-								<h4>Манасаровар. Живая вода.</h4>
-								<p>День полного покоя на берегу великого озера. Медитации, созерцание и интеграция полученных энергий.</p>
+								<span class="day">Day 11</span>
+								<h4>Zutulphuk → Completion of Kora → Lake Manasarovar</h4>
+								<p>Trek: 10 km, 3–4 hours. Meet with transport. Drive to Lake Manasarovar. Overnight in a lodge near the lake (4550 m).</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 13</span>
-								<h4>Прощание с Горами.</h4>
-								<p>Посещение монастыря Чиу («Птичье гнездо»). Финальные практики и благодарность пространству.</p>
+								<span class="day">Day 12</span>
+								<h4>Manasarovar</h4>
+								<p>Day of rest and integration. Free time on the lake shore.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 14</span>
-								<h4>Манасаровар — Сага.</h4>
-								<p>Прощание с Великой Горой и озерами. Длительный переезд в Сагу (6-8 часов). Увозим тишину внутри себя.</p>
+								<span class="day">Day 13</span>
+								<h4>Manasarovar</h4>
+								<p>Visit to Chiu Monastery. Practices at the lake.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 15</span>
-								<h4>Сага — Граница — Катманду.</h4>
-								<p>Переезд до границы с Непалом (4 часа). Смена декораций. Трансфер в Катманду. Завершение экспедиции.</p>
+								<span class="day">Day 14</span>
+								<h4>Transfer Manasarovar → Border (Kodari/Purang area)</h4>
+								<p>Overnight near the border.</p>
 
 							</div>
 						</li>
 
 						<li>
 							<div class="list__item">
-								<span class="day">День 16</span>
-								<h4>Вылет из Катманду</h4>
-								<p>Свободное время в Катманду. Трансфер в аэропорт и вылет домой.</p>
+								<span class="day">Day 15</span>
+								<h4>Border crossing. Transfer to Kathmandu</h4>
+								<p>Overnight in Kathmandu.</p>
+
+							</div>
+						</li>
+
+						<li>
+							<div class="list__item">
+								<span class="day">Day 16</span>
+								<h4>Free day in Kathmandu</h4>
+								<p>Departure from Kathmandu or continuation of the program in Nepal.</p>
 
 							</div>
 						</li>
@@ -496,9 +531,9 @@
 				<div class="subscribe-wrap">
 					<img src="images/dist/envelope.png" alt="Envelope">
 					<div class="subscribe-form">
-						<p>Оставьте email и получите полную презентацию с нашим маршрутом</p>
+						<p>Leave your email and get the full presentation with our itinerary</p>
 						<div class="subscribe-input-wrap">
-							<input type="text" placeholder="Ваш email">
+							<input type="text" placeholder="Your email">
 							<button><span>Go!</span> </button>
 						</div>
 					</div>
@@ -534,31 +569,41 @@
 
 	<section class="choose">
 		<div class="container">
-			<h3>Почему этот путь — для вас?</h3>
+			<h3>Why Choose Our Tibet Tour</h3>
 			<div class="choose__wrapper">
 
 				<div class="choose__item">
 					<img src="images/dist/buddha.png" alt="Buddha">
-					<h2>Нестандартный маршрут</h2>
-					<p>Мы посещаем места, которые часто остаются «за кадром» массовых туров: пещеры отшельников, горячие источники Тиртапури, скрытые святилища. Авторская программа.</p>
+					<h2>Experienced Guides</h2>
+					<p>Spiritual Guides: Our expert guides are not just knowledgeable about the destinations; they are well-versed
+						in
+						the spiritual significance of each location. They will help you navigate the journey both physically and
+						spiritually.</p>
 				</div>
 
 				<div class="choose__item">
 					<img src="images/dist/buddha.png" alt="Buddha">
-					<h2>Пространство Созвучия</h2>
-					<p>Мы создаем «герметичный круг». Это пространство доверия, где можно быть уязвимым. Мы становимся единым организмом, резонирующим с местом.</p>
+					<h2>Exclusive Spiritual Experiences</h2>
+					<p>Personalized Rituals: Our tour includes exclusive spiritual experiences, such as guided meditations, prayer
+						sessions, and interactions with local spiritual leaders, allowing you to deepen your connection with the
+						spiritual essence of Tibet.</p>
 				</div>
 
 				<div class="choose__item">
 					<img src="images/dist/buddha.png" alt="Buddha">
-					<h2>Баланс усилий и отдыха</h2>
-					<p>Мы знаем цену отдыха в горах. Сложные переходы сменяются днями интеграции у озер. Мы не бежим марафон, мы идем в ритме сердца.</p>
+					<h2>Experienced Guides</h2>
+					<p>Spiritual Guides: Our expert guides are not just knowledgeable about the destinations; they are well-versed
+						in
+						the spiritual significance of each location. They will help you navigate the journey both physically and
+						spiritually.</p>
 				</div>
 
 				<div class="choose__item">
 					<img src="images/dist/buddha.png" alt="Buddha">
-					<h2>Результат, который остается</h2>
-					<p>Сувениры покроются пылью, а состояние внутренней тишины останется. Это импульс перемен, который будет разворачиваться долго после возвращения.</p>
+					<h2>Experienced Guides</h2>
+					<p>Personalized Rituals: Our tour includes exclusive spiritual experiences, such as guided meditations, prayer
+						sessions, and interactions with local spiritual leaders, allowing you to deepen your connection with the
+						spiritual essence of Tibet.</p>
 				</div>
 
 			</div>
@@ -568,12 +613,14 @@
 	<section class="guide" id="guide">
 		<div class="container guide-adapt">
 			<div class="guide__wrapper">
-				<h3>Ваш Проводник</h3>
+				<h3>Welcome our tour guide</h3>
 
 				<div class="guide__box">
-					<h4>Екатерина</h4>
-					<span>Проводник смыслов</span>
-					<p>«Я не гид, который показывает, куда смотреть. Я проводник, который помогает увидеть». Катя ведет группы в Тибет и на Алтай уже много лет. Она создает атмосферу, где внешняя сложность пути превращается во внутреннюю ясность.</p>
+					<h4>Katya</h4>
+					<span>Meditation coach, Tour Guide</span>
+					<p>After experiencing the effects of meditation, I had the idea to integrate the energy of the Power Places,
+						the
+						openness of the body and mind in adventurous tours using... </p>
 				</div>
 			</div>
 			<img src="images/dist/katya-s.jpg" alt="Katya / Meditation coach, Tour Guide" class="img-mob">
@@ -583,8 +630,8 @@
 	<section class="review">
 		<div class="container">
 			<div class="review__header">
-				<h3>Отзывы участников</h3>
-				<p>Истории трансформации и впечатления о пути</p>
+				<h3>Transformative Experiences Shared by Our Guest</h3>
+				<p>Hear Stories of Spiritual Awakening in Altai</p>
 			</div>
 			<div class="swiper review__swiper">
 				<div class="swiper-wrapper">
@@ -592,63 +639,35 @@
 
 						<div class="slide__wrap">
 							<div class="user">
-								<img src="images/dist/user.png" alt="User">
+								<img src="images/dist/user.png" alt="Alex Smith">
 								<div>
-									<p>eleshadorofeeva</p>
-									<p>Участник</p>
+									<p>Alex Smith</p>
+									<p>Entrepreneur</p>
 								</div>
 							</div>
 							<div class="slide-review">
-								<p>«Для меня этот поход был переломным моментом в моей жизни, где я многое поняла и приняла! Всем рекомендую Катю, как гида... Она вам расскажет и покажет то, что никто даже и представления не имеет!»</p>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+									totam
+									rem
+									aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+									explicabo.
+									Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+									magni
+									dolores
+									eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+									amet,
+									consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+									magnam
+									aliquam</p>
 							</div>
 
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="slide__wrap">
-							<div class="user">
-								<img src="images/dist/user.png" alt="User">
-								<div>
-									<p>astrum_lebed</p>
-									<p>Участник</p>
-								</div>
-							</div>
-							<div class="slide-review">
-								<p>«Первый раз в походе, да еще наполненном энергетическими практиками. Каждое место силы обладало своей историей, которые передавала Катя. Трансформации, произошедшие в походе, раскрываются и по сей день.»</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="slide__wrap">
-							<div class="user">
-								<img src="images/dist/user.png" alt="User">
-								<div>
-									<p>elena_zhendareva</p>
-									<p>Участник</p>
-								</div>
-							</div>
-							<div class="slide-review">
-								<p>«Организовано наше путешествие было прекрасно. Отдельно хочу сказать о практиках, которые проводила нам Катерина - это воссоединение тела, духа и души и энергетики окружающей нас природы.»</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="slide__wrap">
-							<div class="user">
-								<img src="images/dist/user.png" alt="User">
-								<div>
-									<p>KovalenkoIS</p>
-									<p>Участник</p>
-								</div>
-							</div>
-							<div class="slide-review">
-								<p>«Она как проводник чутко и бережно поддерживала каждого участника. Я от всей души благодарна, что выбрала пойти с ней. Она не просто гид, а проводник в места силы.»</p>
-							</div>
-
-						</div>
-					</div>
+					<div class="swiper-slide">Slide 2</div>
+					<div class="swiper-slide">Slide 3</div>
+					<div class="swiper-slide">Slide 4</div>
+					<div class="swiper-slide">Slide 5</div>
+					<div class="swiper-slide">Slide 6</div>
 				</div>
 
 				<div class="swiper-button-next">
@@ -679,7 +698,7 @@
 					<ul>
 						<li class="active">
 							<a class="accordion-button">
-								<p class="accordion-title">Стоимость участия</p>
+								<p class="accordion-title">Price Information</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
 									<path fill="#000"
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
@@ -687,38 +706,42 @@
 							</a>
 							<div class="content first-section" style="display: block;">
 								<div class="tour-price-header" style="width: 100%; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
-									<h3 style="font-size: 28px; margin-bottom: 10px;">Стоимость: $2800</h3>
-									<p style="font-size: 16px; color: #666;">Порядок оплаты: Депозит $500, Второй платеж $1000, Остаток $1300.</p>
+									<h3 style="font-size: 28px; margin-bottom: 10px;">Tour Price: $2,800</h3>
+									<p style="font-size: 16px; color: #666;">August 6–20, 2026 • 16 Days</p>
 								</div>
 								<div class="first-section__header">
 									<div>
-										<p>ВКЛЮЧЕНО:</p>
+										<p>INCLUDED:</p>
 										<ul>
-											<li>Пермиты в Тибет и пограничные пропуска</li>
-											<li>Трансферы (аэропорт, автобус, граница)</li>
-											<li>Тибетский гид + Русский проводник (Катя)</li>
-											<li>Проживание (отели/гестхаусы, 2-мест.)</li>
-											<li>Завтраки</li>
-											<li>Входные билеты (монастыри, нацпарки)</li>
-											<li>Страховка (медицинская)</li>
+											<li>Drive from Kathmandu to the border in a private bus with Nepalese guide</li>
+											<li>Private Transport – drive from the border to Mt. Kailash, Lake Manasarovar and back to the
+												(see
+												itinerary)</li>
+											<li>All permits and road tolls in Tibet</li>
+											<li>Local guide, driver; Western guide</li>
 										</ul>
 									</div>
 
 									<div>
-										<p>НЕ ВКЛЮЧЕНО:</p>
+										<p>EXCLUDED:</p>
 										<ul>
-											<li>Международные авиабилеты</li>
-											<li>Китайская виза (если нужна)</li>
-											<li>Обеды и ужины ($15–20/день)</li>
-											<li>Портеры/яки на Коре</li>
-											<li>Личные расходы и чаевые</li>
+											<li>Chinese visa fee; visa for Nepal</li>
+											<li>All cost for food and overnight</li>
+											<li>Horse and horse driver for personal ride</li>
+											<li>Cost in case of an emergency</li>
+											<li>Airport transfer and hotel in Kathmandu</li>
 										</ul>
 									</div>
 
 								</div>
 
 								<div class="first-section__body">
-									<p>Важно: Валюта в Тибете — ТОЛЬКО наличные китайские юани (CNY). Карты почти нигде не работают. Интернет слабый, нужен VPN.</p>
+									<p>Of course we cannot determine or foresee your spending behaviour, however with a moderate way of
+										spending you
+										will need about 100-150 CNY / day this will cover food , simple accommodation & entrance fees (Grass
+										land 65Y/
+										Kailash 300Y). A porter on the kora will cost extra 120 CNY / day.
+									</p>
 
 									<h5>
 										<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -740,17 +763,27 @@
 											</defs>
 										</svg>
 
-										Условия и проживание:
+										Please note:
 									</h5>
 
-									<p>Мы используем тактику «зубчатой акклиматизации» — плавный набор высоты. В городах — отели, на Коре — простые гестхаусы (иногда без горячей воды). Питание: рис, лапша, мясо яка, овощи. Вегетарианцам ок.</p>
+									<p>We will not be responsible for extra cost incurred by landslides, road blockages and other
+										weather-related
+										or political problems.You are responsible for your own health. Our arrangements are designed to
+										allow
+										sufficient time for acclimatisation.Accommodation will occasionally be in shared rooms (small
+										dormitories).
+										During the Kailash kora accommodation will be very simple. We assume you are prepared to share
+										rooms/tents
+										with others, regardless of gender.We reserve the right to increase the tour price should the Euro in
+										relation
+										to the Chinese Yuan (RMB) depreciate significantly.</p>
 								</div>
 							</div>
 						</li>
 
 						<li class="active">
 							<a class="accordion-button">
-								<p class="accordion-title">Визы и Документы</p>
+								<p class="accordion-title">Visa and Passport Information</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
 									<path fill="#000"
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
@@ -758,13 +791,20 @@
 							</a>
 							<div class="content second-section" style="display: block;">
 								<div>
-									<h5>ВИЗА В КИТАЙ</h5>
-									<p>Для граждан РФ виза в Китай сейчас не нужна (уточняйте актуальные данные по групповым спискам). Для граждан Европы/США — виза L. Пермиты в Тибет мы оформляем сами.</p>
+									<h5>VISA NEPAL</h5>
+									<p>Is best applied for upon arrival in Nepal. You will need a passport photo. For your first entry in
+										a
+										calendar year you get a 30 day or 90 day multiple-entry visa valid from the date of entry. The visa
+										costs US$
+										40 or US$ 100, respectively.</p>
 								</div>
 
 								<div>
-									<h5>ПАСПОРТ</h5>
-									<p>Срок действия загранпаспорта должен быть не менее 6 месяцев после даты окончания поездки.</p>
+									<h5>TIBET GROUP VISA</h5>
+									<p>Will be obtained in Kathmandu. For this, we need one passport photo and a filled in visa form.
+										Visa- Fee US$
+										114 in cash, payable upon arrival when handing over the passport. (US citizens must pay US$ 198.)
+									</p>
 								</div>
 							</div>
 						</li>
@@ -778,8 +818,8 @@
 	<section class="faq">
 		<div class="container">
 			<div class="faq__header">
-				<h3>Частые вопросы</h3>
-				<p>Здесь вы найдете ответы на самые популярные вопросы</p>
+				<h3>FAQ</h3>
+				<p>YOU CAN FIND HERE ANSWERS FOR THE MOST COMMON QUESTIONS</p>
 			</div>
 
 			<div class="faq__wrapper">
@@ -787,40 +827,46 @@
 					<ul>
 						<li class="">
 							<a class="accordion-button">
-								<p class="accordion-title">Горная болезнь: как проходит акклиматизация?</p>
+								<p class="accordion-title">Drive from Kathmandu to the border in a private bus with Nepalese guide?</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
 									<path fill="#000"
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
 								</svg>
 							</a>
 							<div class="content" style="display: none;">
-								<p>Мы используем тактику «зубчатой акклиматизации» — плавный набор высоты. В первые дни возможна легкая головная боль — это нормально. Рекомендуем пить больше воды. Аптечка у гида.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum quibusdam iusto
+									repudiandae nostrum, dicta voluptas molestias minus saepe veritatis assumenda asperiores. Error rem,
+									praesentium cumque earum fugiat labore accusantium.</p>
 							</div>
 						</li>
 
 						<li class="">
 							<a class="accordion-button">
-								<p class="accordion-title">Нужна ли спортивная подготовка?</p>
+								<p class="accordion-title">Drive from Kathmandu to the border in a private bus with Nepalese guide?</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
 									<path fill="#000"
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
 								</svg>
 							</a>
 							<div class="content" style="display: none;">
-								<p>Кора — это испытание духа. Специальная подготовка не требуется, но нужна общая выносливость (18 км в день пешком). Главное — идти в своем темпе.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tenetur sit minima aliquam animi
+									ducimus incidunt quasi optio culpa ullam tempore inventore laboriosam velit, voluptatem obcaecati
+									magnam excepturi, delectus corrupti!</p>
 							</div>
 						</li>
 
 						<li class="">
 							<a class="accordion-button">
-								<p class="accordion-title">Быт: Проживание и Еда</p>
+								<p class="accordion-title">Drive from Kathmandu to the border in a private bus with Nepalese guide?</p>
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
 									<path fill="#000"
 										d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
 								</svg>
 							</a>
 							<div class="content" style="display: none;">
-								<p>В городах — отели, на Коре — простые гестхаусы (иногда без горячей воды). Питание: рис, лапша, мясо яка, овощи. Вегетарианцам ок. Берите снеки.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, velit voluptatibus repellat odio
+									fugit eius, eveniet et dolores numquam officia blanditiis. Tempora inventore libero ad aliquid
+									architecto. Quae, animi culpa.</p>
 							</div>
 						</li>
 
@@ -839,9 +885,9 @@
       <div class="footer-section">
         <div class="footer-action">
           <div class="subscribe-form">
-						<p>Подпишитесь на новости, чтобы узнавать о новых путешествиях</p>
+						<p>subscribe to the news to stay updated on new interesting stories</p>
 						<div class="subscribe-wrap">
-							<input type="text" placeholder="Ваш email">
+							<input type="text" placeholder="Your email">
 							<button><span>Go!</span> </button>
 						</div>
 					</div>
@@ -853,7 +899,7 @@
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm7.44 10.96l-2.63 12.4c-.2.88-.72 1.1-1.46.68l-4.04-2.98-1.95 1.88c-.22.22-.4.4-.82.4l.29-4.1 7.48-6.76c.32-.29-.07-.45-.5-.16l-9.24 5.82-3.98-1.24c-.87-.27-.88-.87.18-1.29l15.56-6c.72-.26 1.35.18 1.11 1.35z" fill="#F3F5F5"></path>
                 </svg>
-                <span style="color:#fff;">Следите за нами в Telegram</span>
+                <span style="color:#fff;">Follow us in Telegram</span>
               </a>
             </div>
           </div>
@@ -870,11 +916,11 @@
 	</div>
 
   <div id="booking-form" class="mfp-hide white-popup-block booking-form">
-    <h2>Ваше внутреннее путешествие начинается здесь!</h2>
-    <p>Мы бережно относимся к вашим данным и гарантируем конфиденциальность.</p>
+    <h2>Your inner journey starts with us!</h2>
+    <p>We take data privacy seriously and promise to keep all information you provide in safe hands</p>
     <form action="https://formspree.io/" method="POST">
-      <input type="name" name="name" required placeholder="Ваше Имя">
-      <input type="email" name="email" required placeholder="Ваш Email">
+      <input type="name" name="name" required placeholder="Your Name">
+      <input type="email" name="email" required placeholder="Your Email">
 
       <div class="notice">
         <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -883,10 +929,10 @@
             fill="#FF9C0A" />
         </svg>
 
-        <p>Мы бережно относимся к вашим данным и гарантируем конфиденциальность.</p>
+        <p>We take data privacy seriously and promise to keep all information you provide in safe hands</p>
       </div>
 
-      <button class="btn send" type="submit">Отправить</button>
+      <button class="btn send" type="submit">Submit</button>
 
     </form>
 
@@ -902,6 +948,7 @@
 
 
 
+<!-- Lenis smooth scroll removed for native scrolling -->
 <script>
 // Mock Lenis to prevent errors if app.min.js tries to use it
 window.Lenis = function() {
