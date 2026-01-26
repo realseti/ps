@@ -1,0 +1,414 @@
+/* =========================================
+   1. LENIS & SCROLL BEHAVIOR
+   ========================================= */
+html,
+body {
+    scroll-behavior: auto !important;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+    overflow: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+/* =========================================
+   2. INTRODUCTION & GUIDE
+   ========================================= */
+.introduction__txt {
+    padding-top: 4rem;
+}
+
+.introduction__txt h2 {
+    margin-bottom: 1.5rem;
+}
+
+.introduction__txt p {
+    padding-bottom: 10px;
+}
+
+.milage {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 3;
+}
+
+.guide__wrapper {
+    /* Path corrected for css/ folder */
+    background: url(../images/user/katya-bg.jpg);
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 880px) {
+    .guide__wrapper {
+        background: #b0c2b2 !important;
+    }
+}
+
+.mfp-content {
+    padding: 3rem;
+}
+
+.hero__wrapper p {
+    padding: 1.5rem 0px 1.5rem;
+}
+
+/* =========================================
+   3. FONTS
+   ========================================= */
+/* 1. H1 Replacement: Poller -> Philosopher */
+.hero__wrapper h1,
+.poller-font {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 1000;
+    font-size: 4rem;
+    line-height: 130%;
+}
+
+.hero__wrapper p {
+    font-weight: 600;
+}
+
+/* 2. H2 Replacement: Kokoro -> Yeseva One */
+.introduction__txt h2,
+.kokoro-font {
+    font-family: 'Yeseva One', serif;
+    font-weight: 400;
+    font-size: 2.75rem;
+}
+
+/* 3. H3 Replacement: Garbata -> Alegreya Sans */
+.kora .container h3,
+.lake .container h3,
+.temples .container h3,
+.garbata-font {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    padding-bottom: 3.5rem;
+}
+
+/* 4. Body Text: Ensure Cyrillic Inter works + fallbacks */
+body {
+    font-family: 'Inter', 'Alegreya Sans', 'Philosopher', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* =========================================
+   4. PLACES (ZIG-ZAG LAYOUT)
+   ========================================= */
+/* 1. Base Layout (Applied to ALL items) - Defaults to LEFT alignment */
+.places-item .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    /* Pushes text to the bottom */
+
+    /* Default: Left Align */
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-align: left;
+
+    height: 100%;
+    padding-bottom: 4rem;
+    /* Bottom spacing */
+}
+
+/* 2. EVEN Items (2, 4, 6, 8...) - Switches to RIGHT alignment */
+.places-item:nth-child(even) .container {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* 3. Typography */
+.places-item .container h3 {
+    font-family: Garbata, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    padding-bottom: 2rem;
+    margin: 0;
+}
+
+.places-item .container p {
+    max-width: 770px;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 4. Mobile Adaptations (Force Center on small screens) */
+@media (max-width: 750px) {
+
+    .places-item .container,
+    .places-item:nth-child(even) .container {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        /* Center vertically on mobile */
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        /* Center horizontally */
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .places-item .container h3 {
+        font-size: 2.25rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* =========================================
+   5. SUBNAV
+   ========================================= */
+.subnav ul {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subnav ul li {
+    flex: 0 0 auto;
+}
+
+.subnav a.btn.sub {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+
+@media (max-width:500px) {
+    .subnav ul {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .subnav ul li {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .subnav a.btn.sub {
+        width: 100%;
+        padding: 10px 14px;
+        box-sizing: border-box;
+    }
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    padding: 4rem 0;
+    box-sizing: border-box;
+}
+
+footer .footer__wrapper .footer-section {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Logo block: always below the .footer-action and full-width */
+footer .footer__wrapper .footer-section>.footer-logo-centered {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 64px 0 !important;
+    clear: both !important;
+    float: none !important;
+    position: relative !important;
+}
+
+footer .footer__wrapper .footer-section>.footer-logo-centered img {
+    max-width: 320px;
+    height: auto;
+    display: inline-block;
+}
+
+/* New Footer Telegram - Centered */
+.footer-telegram {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer-telegram .footer-telegram-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-telegram a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Mobile Tweaks */
+@media (max-width:750px) {
+    footer .footer__wrapper .footer-section>.footer-logo-centered {
+        padding-top: 48px !important;
+        padding-bottom: 32px !important;
+    }
+}
+
+@media (max-width:480px) {
+    footer .footer__wrapper .footer-section>.footer-logo-centered {
+        padding: 24px 0 !important;
+    }
+}
+
+/* =========================================
+   7. BOOKING FORM (Inline Styles Extracted)
+   ========================================= */
+.booking-form-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+}
+
+.booking-form-centered h2 {
+    margin-bottom: 0;
+}
+
+.booking-form-desc {
+    max-width: 100%;
+}
+
+.booking-form-btn-telegram {
+    margin-bottom: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    width: auto;
+    padding: 1rem 3rem;
+}
+
+/* =========================================
+   8. REVIEWS SLIDER
+   ========================================= */
+/* Review slider fixes: center content vertically and ensure consistent slide height */
+.review__swiper {
+    position: relative;
+}
+
+.review .swiper-slide {
+    display: block;
+}
+
+.review .slide__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.review .user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.review .slide-review {
+    margin-top: 18px;
+}
+
+.review .slide-review p {
+    margin: 0;
+}
+
+/* Keep navigation arrows vertically centered regardless of slide height */
+.review .swiper-button-next,
+.review .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Make arrows slightly inset on mobile for easier tapping */
+@media (max-width: 768px) {
+    .review .swiper-button-next {
+        right: 12px;
+    }
+
+    .review .swiper-button-prev {
+        left: 12px;
+    }
+
+    .review .slide__wrap {
+        padding: 28px 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .review .slide__wrap {
+        padding: 44px 60px;
+    }
+}
+
+/* User link in reviews */
+.user-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================================
+   9. COST & FAQ SECTIONS
+   ========================================= */
+.tour-price-header {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tour-price-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.tour-price-note {
+    font-size: 14px;
+    color: #d9534f;
+    margin-bottom: 15px;
+}
+
+.tour-price-details {
+    font-size: 16px;
+    color: #333;
+}
