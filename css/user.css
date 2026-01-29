@@ -387,6 +387,11 @@ footer .footer__wrapper .footer-section>.footer-logo-centered img {
     text-decoration: none;
 }
 
+.intro-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
 /* =========================================
    9. COST & FAQ SECTIONS
    ========================================= */
