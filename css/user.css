@@ -59,6 +59,10 @@ html.lenis body {
     padding: 1.5rem 0px 1.5rem;
 }
 
+.hero {
+    background-image: url(../images/user/hero.jpg) !important;
+}
+
 /* =========================================
    3. FONTS
    ========================================= */
@@ -141,7 +145,7 @@ body {
 .places-item .container h3 {
     font-family: Garbata, serif;
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 700;
     padding-bottom: 2rem;
     margin: 0;
 }
@@ -151,6 +155,7 @@ body {
     margin: 0;
     font-size: 1.1rem;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* 4. Mobile Adaptations (Force Center on small screens) */
