@@ -63,6 +63,10 @@ html.lenis body {
     background-image: url(../images/user/hero.jpg) !important;
 }
 
+.btn.accent {
+    margin-top: 40px;
+}
+
 /* =========================================
    3. FONTS
    ========================================= */
