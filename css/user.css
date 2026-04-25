@@ -426,3 +426,365 @@ footer .footer__wrapper .footer-section>.footer-logo-centered img {
     font-size: 16px;
     color: #333;
 }
+
+/* =========================================
+   10. GEAR, PRICING & VISA SECTIONS
+   ========================================= */
+:root{
+  --bg-alt:    #ece6da;
+  --ink:       #1c1d1f;
+  --ink-soft:  #4a4a4a;
+  --muted:     #7a7468;
+  --line:      rgba(28,29,31,.10);
+  --accent:    #f39a2b;
+  --accent-2:  #e07a14;
+  --card:      #ffffff;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(0,0,0,.05);
+  --shadow-md: 0 6px 18px rgba(0,0,0,.06), 0 20px 40px rgba(0,0,0,.06);
+  --radius:    14px;
+  --serif:     "Philosopher", "Times New Roman", serif;
+  --sans:      "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Inline language switcher in header */
+.lang-switch{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  font-family: var(--sans);
+  margin-right: 15px; /* Spacing between lang switch and social icons */
+}
+
+/* Section paddings & Headers */
+.faq__header h3 {
+  font-family: Garbata, serif;
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.faq__header p {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 auto 56px;
+  font-size: 17px;
+}
+#gear, #pricing, #visa {
+  padding: 4rem 0;
+}
+.lang-switch button{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  transition: background .2s ease, color .2s ease;
+}
+.lang-switch button:hover:not(:disabled){ color: var(--ink); }
+.lang-switch button.is-active{
+  background: var(--ink);
+  color: #fff;
+}
+.lang-switch button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Section scaffolding */
+.section-shaded{ background: var(--bg-alt); }
+.eyebrow{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-weight: 600;
+  margin: 0 0 14px;
+  font-family: var(--sans);
+}
+.section-title{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.section-lede{
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 56px;
+  font-size: 17px;
+  font-family: var(--sans);
+}
+.section-head{ margin-bottom: 56px; }
+
+/* 1. Gear list */
+.gear-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 56px;
+  border-top: 1px solid var(--line);
+}
+.gear-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+  color: var(--ink);
+  font-family: var(--sans);
+}
+.gear-item .name{ flex:1; }
+.gear-item .num{
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  width: 28px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.gear-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+  flex-shrink: 0;
+}
+.gear-link:hover{
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.gear-link svg{ width:15px; height:15px; }
+
+/* 2. Pricing */
+.price-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 24px;
+}
+.price-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--sans);
+}
+.price-card.is-feature{
+  background: var(--ink);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.price-card.is-feature::after{
+  content:"";
+  position:absolute; inset:auto -20% -40% auto;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
+  opacity:.35;
+  pointer-events:none;
+}
+.price-tag{
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.price-card h3{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -.005em;
+  color: inherit;
+}
+.price-amount{
+  font-family: var(--serif);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 18px 0 6px;
+  letter-spacing: -.02em;
+}
+.price-amount small{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--sans);
+  color: rgba(255,255,255,.65);
+  margin-left: 6px;
+}
+.price-card.is-feature p{ color: rgba(255,255,255,.72); margin: 0 0 8px; }
+.price-card p{ color: var(--muted); margin: 0 0 8px; font-size: 15px; }
+
+.price-cta{
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .04em;
+  transition: background .2s ease, transform .2s ease;
+  align-self: flex-start;
+}
+.price-cta:hover{ background: var(--accent-2); transform: translateY(-1px); color: #fff;}
+
+.price-list{
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.price-list li{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+.price-list .ico{
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  margin-top: 2px;
+}
+.price-list .ico--check{ color: #2f9e64; }
+.price-list .ico--x{ color: #c44; }
+.price-card h4{
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* 3. Visa */
+.visa-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.visa-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  font-family: var(--sans);
+}
+.visa-card h3{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 26px;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.visa-card p{ color: var(--ink-soft); font-size: 15px; margin: 0 0 18px; }
+.visa-steps{
+  counter-reset: step;
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.visa-steps li{
+  counter-increment: step;
+  display: flex; gap: 16px;
+  padding: 16px 18px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.visa-steps li::before{
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent-2);
+  line-height: 1;
+  min-width: 32px;
+}
+.visa-steps li strong{
+  display:block;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 15px;
+}
+.visa-list{
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.visa-list li{
+  display:flex; gap:14px; align-items:flex-start;
+  font-size: 15px; color: var(--ink-soft); line-height:1.5;
+}
+.visa-list .dot{
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  margin-top: 9px; flex-shrink: 0;
+}
+.visa-list strong{ color: var(--ink); font-weight: 600; }
+.visa-note{
+  margin-top: 36px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--accent);
+  background: rgba(243,154,43,.07);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+}
+.visa-note strong{ color: var(--ink); }
+
+/* Responsive */
+@media (max-width: 900px){
+  .gear-grid{ grid-template-columns: 1fr; gap: 0; }
+  .price-grid{ grid-template-columns: 1fr; }
+  .visa-grid{ grid-template-columns: 1fr; }
+  .price-amount{ font-size: 44px; }
+}
+@media (max-width: 480px){
+  .lang-switch{ top: 14px; right: 14px; }
+  .gear-item{ padding: 16px 2px; font-size: 15px; }
+  .price-card, .visa-card{ padding: 28px 22px; }
+}

@@ -45,6 +45,12 @@
 			<a href="index.html" class="logotype"><img src="images/dist/logotype.svg" alt="logotype"></a>
 
 			<div class="nav__menu">
+				<!-- ============ Language switcher ============ -->
+				<div class="lang-switch" aria-label="Language">
+					<button type="button" disabled data-lang="en" aria-pressed="false"
+						style="opacity: 0.5; cursor: not-allowed;">EN</button>
+					<button type="button" class="is-active" data-lang="ru" aria-pressed="true">RU</button>
+				</div>
 				<ul class="social">
 					<li>
 						<a href="https://t.me/puresummit" target="_blank" title="Telegram">
@@ -90,7 +96,9 @@
 			<ul>
 				<li><a href="#program" class="btn sub">Программа</a></li>
 				<li><a href="#guide" class="btn sub">Проводник</a></li>
-				<li><a href="#info" class="btn sub">Стоимость</a></li>
+				<li><a href="#gear" class="btn sub">Снаряжение</a></li>
+				<li><a href="#pricing" class="btn sub">Стоимость</a></li>
+				<li><a href="#visa" class="btn sub">Документы</a></li>
 			</ul>
 		</div>
 
@@ -994,106 +1002,158 @@
 			</div>
 		</section>
 
-		<section class="info" id="info">
+		<!-- ============ 1. Recommended Gear ============ -->
+		<section id="gear">
 			<div class="container">
-				<div class="info__wrapper">
-					<div class="accordion">
-						<ul>
-							<li class="active">
-								<a class="accordion-button">
-									<p class="accordion-title">Стоимость участия</p>
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
-										<path fill="#000"
-											d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
-									</svg>
-								</a>
-								<div class="content first-section" style="display: block;">
-									<div class="tour-price-header">
-										<h3 class="tour-price-title">Стоимость: $2800*</h3>
-										<p class="tour-price-note">*цена актуальна
-											при раннем бронировании до 1 марта</p>
-										<p class="tour-price-details"><strong>Порядок оплаты:</strong><br>1.
-											Предоплата $500 для бронирования места.<br>2. Второй платеж $1000 до 1
-											июля.<br>3. Оставшуюся сумму в долларах передаете гиду при встрече.</p>
-									</div>
+				<div class="faq__header">
+					<h3>Рекомендуемое снаряжение</h3>
+					<p>Проверенный в полевых условиях список вещей для высокогорного треккинга.</p>
+				</div>
 
-									<div class="first-section__header">
-										<div>
-											<p>ВКЛЮЧЕНО:</p>
-											<ul>
-												<li>Оформление всех пермитов (Тибет, пограничные пропуска)</li>
-												<li>Встреча в аэропорту Лхасы и трансфер в отель</li>
-												<li>Ежедневное сопровождение тибетским англоязычным гидом</li>
-												<li>Ежедневное сопровождение русского гида-переводчика</li>
-												<li>Все групповые перемещения (комфортабельный автобус)</li>
-												<li>Проживание (отели/гестхаусы, 2-мест.)</li>
-												<li>Завтраки</li>
-												<li>Входные билеты (монастыри, нацпарки)</li>
-												<li>Трансфер до границы с Непалом (для выезжающих)</li>
-												<li>Трансфер в аэропорт (для завершающих в Лхасе)</li>
-												<li>Трансфер из Кирунга до Катманду</li>
-												<li>Туристическая страховка, кислород и вода</li>
-											</ul>
-										</div>
+				<div class="gear-grid" id="gear-list">
+					<!-- items injected by JS for cleanliness; fallback below -->
+				</div>
+			</div>
+		</section>
 
-										<div>
-											<p>НЕ ВКЛЮЧЕНО:</p>
-											<ul>
-												<li>Международные авиабилеты в/из Лхасы</li>
-												<li>Обеды и ужины ($15–20/день)</li>
-												<li>Портеры/яки/лошади на Коре (по желанию)</li>
-												<li>Объезд вокруг оз. Манасаровар на автобусе</li>
-												<li>Купание в горячих источниках (монастырь Чиу)</li>
-												<li>Чаевые гидам и водителю</li>
-												<li>Виза в Непал ($30-50, на границе)</li>
-												<li>Китайская виза (если требуется)</li>
-											</ul>
-										</div>
-									</div>
 
-									<div class="first-section__body">
-										<h5>ДЕНЬГИ И ВАЛЮТА</h5>
-										<p><strong>Валюта:</strong> В Тибете принимаются только наличные китайские юани
-											(CNY). Доллары нужно поменять заранее или в Лхасе.</p>
-										<p><strong>Карты:</strong> UnionPay работает в банкоматах крупных городов
-											(Лхаса). На остальном маршруте, особенно на Коре, расчет <strong>только
-												наличными</strong>.</p>
-									</div>
-								</div>
-							</li>
+		<!-- ============ 2. Pricing ============ -->
+		<section id="pricing">
+			<div class="container">
+				<div class="faq__header">
+					<h3>Стоимость участия</h3>
+					<p>Подробный расчет стоимости экспедиции.</p>
+				</div>
 
-							<li class="active">
-								<a class="accordion-button">
-									<p class="accordion-title">Визы и Документы</p>
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="none">
-										<path fill="#000"
-											d="M29.704.295a1.003 1.003 0 0 0-1.42 0L14.948 13.587 1.708.384a1.01 1.01 0 0 0-1.412 0 .996.996 0 0 0 0 1.416l13.983 13.922c.371.37.981.37 1.353 0L29.704 1.703a.996.996 0 0 0 0-1.416z" />
-									</svg>
-								</a>
-								<div class="content second-section" style="display: block;">
-									<div>
-										<h5>ВИЗА В КИТАЙ</h5>
-										<p><strong>Для граждан РФ:</strong> Виза не нужна (въезд по групповым
-											спискам).<br><strong>Для граждан Европы и США:</strong> Требуется
-											стандартная туристическая китайская виза (тип L).</p>
-									</div>
+				<div class="price-grid">
+					<!-- Featured price card -->
+					<article class="price-card is-feature">
+						<div class="price-tag">Полная экспедиция</div>
+						<h3>16-дневное путешествие</h3>
+						<p>От прибытия в Лхасу до завершения в Катманду.</p>
+						<div class="price-amount">$2,800<small>*</small></div>
+						<p style="font-size: 13px; margin-bottom: 16px;">*цена актуальна при раннем бронировании до 1
+							марта</p>
+						<p style="font-size: 14px; opacity: 0.9;">Порядок оплаты:<br>1. Предоплата $500 для бронирования
+							места.<br>2. Второй платеж $1000 до 1 июля.<br>3. Оставшуюся сумму в долларах передаете гиду
+							при встрече.</p>
+						<a href="#booking-form" class="price-cta book-btn">Присоединиться</a>
+					</article>
 
-									<div>
-										<h5>ПЕРМИТЫ</h5>
-										<p>Мы полностью берем на себя оформление Тибетского пермита (Tibet Travel
-											Permit) и всех пограничных пропусков после подтверждения тура.</p>
-									</div>
-
-									<div>
-										<h5>ПАСПОРТ</h5>
-										<p>Срок действия загранпаспорта должен быть не менее 6 месяцев на момент
-											окончания поездки.</p>
-									</div>
-								</div>
-							</li>
-
+					<!-- Included -->
+					<article class="price-card">
+						<h4>Что включено</h4>
+						<ul class="price-list">
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Оформление всех пермитов (Тибет, пограничные пропуска)</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Ежедневное сопровождение гидами (тибетским и русским)</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Все групповые перемещения (комфортабельный автобус)</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Проживание (отели/гестхаусы, 2-местные номера)</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Завтраки и туристическая страховка, кислород и вода</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Входные билеты (монастыри, нацпарки)</li>
+							<li><svg class="ico ico--check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12" />
+								</svg>Все трансферы по программе</li>
 						</ul>
-					</div>
+					</article>
+
+					<!-- Not included -->
+					<article class="price-card">
+						<h4>Что не включено</h4>
+						<ul class="price-list">
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Международные авиабилеты в/из Лхасы</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Обеды и ужины ($15–20/день)</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Китайская виза (если требуется) и виза в Непал ($30-50, на границе)</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Портеры/яки/лошади на Коре (по желанию)</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Объезд вокруг оз. Манасаровар на автобусе</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Купание в горячих источниках (монастырь Чиу)</li>
+							<li><svg class="ico ico--x" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</svg>Чаевые гидам и водителю</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- ============ 3. Visa & Documents ============ -->
+		<section id="visa" class="section-shaded">
+			<div class="container">
+				<div class="faq__header">
+					<h3>Визы и Документы</h3>
+					<p>Мы берем на себя оформление Тибетского пермита и пропусков, от вас потребуются только базовые
+						документы.</p>
+				</div>
+
+				<div class="visa-grid">
+					<article class="visa-card">
+						<h3>Документы и виза</h3>
+						<ul class="visa-list">
+							<li><span class="dot"></span><span><strong>Паспорт</strong> — срок действия загранпаспорта
+									должен быть не менее 6 месяцев на момент окончания поездки.</span></li>
+							<li><span class="dot"></span><span><strong>Виза в Китай для граждан РФ</strong> — виза не
+									нужна (въезд по групповым спискам).</span></li>
+							<li><span class="dot"></span><span><strong>Виза для граждан Европы и США</strong> —
+									требуется стандартная туристическая китайская виза (тип L).</span></li>
+						</ul>
+					</article>
+
+					<article class="visa-card">
+						<h3>Пермиты</h3>
+						<p>Мы полностью берем на себя оформление Тибетского пермита (Tibet Travel Permit) и всех
+							пограничных пропусков после подтверждения тура.</p>
+					</article>
+				</div>
+
+				<div class="visa-note">
+					<strong>ДЕНЬГИ И ВАЛЮТА:</strong> В Тибете принимаются только наличные китайские юани (CNY). Доллары
+					нужно поменять заранее или в Лхасе. Карты UnionPay работают в банкоматах крупных городов (Лхаса). На
+					остальном маршруте, особенно на Коре, расчет <strong>только наличными</strong>.
 				</div>
 			</div>
 		</section>
@@ -1415,6 +1475,74 @@
 						}
 					});
 				});
+			});
+		});
+	</script>
+
+	<script>
+		// -------- Gear list (rendered cleanly, easy to add buy links) --------
+		const gear = [
+			"Небольшой штурмовой рюкзак – дэй-пак (20-35 литров)",
+			"Треккинговые ботинки или полуботинки",
+			"Треккинговые палки-телескопы (по желанию)",
+			"Куртка ветрозащитная мембранная. И куртка теплая – пуховка",
+			"Штаны ветрозащитные мембранные",
+			"Флиска, кофта из полартека или любая компактная и нетяжелая толстовка",
+			"Комплект теплого термобелья, штаны, кофта",
+			"Брюки треккинговые – ходовые, лучше капроновые",
+			"Шорты, футболки / рубашки с длинным рукавом (2шт)",
+			"Носки легкие (3 пары)",
+			"Носки походные трекинговые (2 пары)",
+			"Кепка от солнца с козырьком и прикрытием на шею или панама плюс бандана или баф",
+			"Шапочка (шерсть, polartec) на трек",
+			"Кроссовки – или любая легкая пара обуви",
+			"Перчатки",
+			"Солнцезащитные очки с фактором – обязательно",
+			"Фонарик налобный",
+			"Павербанк",
+			"Термос металлический 0.7 литра, термокружка",
+			"Крем от солнца – в горах дикая ультрафиолетовая радиация",
+			"Гигиеническая губная помада с защитным фактором",
+			"Полотенце микрофибровое",
+			"Ложка, миска, желательно широкая",
+			"Мыло, зубная щетка и паста (в миниатюрном походном формате)",
+			"Влажные салфетки",
+			"Индивидуальные лекарства и витамины",
+			"Подпопник",
+			"Каши, сухофрукты, коктейли, витамины, мед",
+			"Жилетка, какой-то еще удобный спортивный костюм (по желанию)"
+		];
+
+		const linkIcon = `
+	    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+	         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+	      <polyline points="15 3 21 3 21 9"/>
+	      <line x1="10" y1="14" x2="21" y2="3"/>
+	    </svg>`;
+
+		const listEl = document.getElementById('gear-list');
+		if (listEl) {
+			listEl.innerHTML = gear.map((item, i) => `
+		    <div class="gear-item">
+		      <a class="gear-link" href="#" aria-label="Buy link for ${item}" target="_blank" rel="noopener">
+		        ${linkIcon}
+		      </a>
+		      <span class="name">${item}</span>
+		    </div>
+		  `).join('');
+		}
+
+		// -------- Language switcher (visual only, ready to wire to i18n) --------
+		document.querySelectorAll('.lang-switch button').forEach(btn => {
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('.lang-switch button').forEach(b => {
+					b.classList.remove('is-active');
+					b.setAttribute('aria-pressed', 'false');
+				});
+				btn.classList.add('is-active');
+				btn.setAttribute('aria-pressed', 'true');
+				document.documentElement.lang = btn.dataset.lang;
 			});
 		});
 	</script>
